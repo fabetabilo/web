@@ -3,6 +3,7 @@
 
 /* --- Variables CSS */
 :root {
+  --bg-light: #fff;
   --color-navy: #080B14;
   --color-dark: #0A0D1A;
   --color-cyan: #00C8FF;
@@ -19,15 +20,21 @@
   --font-primary: 'Barlow', sans-serif;
   --font-condensed: 'Barlow Condensed', sans-serif;
   --font-heading-weight: 800;
+  --font-subheading-weight: 800;
   --font-text-weight: 400;
 
   /* Font Sizes */
+  --text-xs: 0.7rem;
   --text-sm: 0.8125rem; /* 13px */
   --text-base: 0.875rem; /* 14px */
   --text-md: 1rem; /* 16px */
   --text-lg: 1.125rem; /* 18px */
 
+  --heading-md: clamp(2rem, 4vw, 3rem);
+  --heading-sm: clamp(1.5rem, 4vw, 2.1rem);
+
   /* Bordes especificos reutilizables */
+  --radius-sm: 8px;
   --radius-full: 9999px; /* full curvo, pildoras */
 }
 

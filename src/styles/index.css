@@ -1,5 +1,5 @@
 /* --- Fuentes globales */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap');
 
 /* --- Variables CSS */
 :root {
@@ -10,18 +10,25 @@
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --text-muted: rgba(255, 255, 255, 0.65);
+  --text-dark: #111111;
 
-  --andu-border: rgba(255, 255, 255, 0.07);
+  --color-border: rgba(255, 255, 255, 0.07);
 
   /* Typography */
+  --font-heading: 'Barlow Semi Condensed', sans-serif;
   --font-primary: 'Barlow', sans-serif;
   --font-condensed: 'Barlow Condensed', sans-serif;
+  --font-heading-weight: 800;
+  --font-text-weight: 400;
 
   /* Font Sizes */
   --text-sm: 0.8125rem; /* 13px */
   --text-base: 0.875rem; /* 14px */
   --text-md: 1rem; /* 16px */
   --text-lg: 1.125rem; /* 18px */
+
+  /* Bordes especificos reutilizables */
+  --radius-full: 9999px; /* full curvo, pildoras */
 }
 
 /* reset */

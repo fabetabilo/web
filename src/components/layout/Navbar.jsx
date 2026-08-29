@@ -1,0 +1,49 @@
+import { useState, useEffect } from 'react'
+import logo from '../../assets/react.svg' // <---- TEMPORAL!!
+import styles from './Navbar.module.css'
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 24)
+    window.addEventListener('scroll', handler, { passive: true })
+    return () => window.removeEventListener('scroll', handler)
+  }, [])
+
+  return (
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+      <div className={styles.inner}>
+        {/* Logo */}
+        <a href="#" className={styles.logo} aria-label="Inicio">
+          <img src={logo} alt="Logo" className={styles.logoIcon} />
+        </a>
+        
+        {/* --- links escritorio TEMPORAL !!!!! */}
+        <div className={styles.links}>
+          {['Inicio', 'Eventos', 'Rankings', 'Instituciones', 'Noticias', 'Quiénes Somos'].map((item) => (
+            <a key={item} href="#" className={styles.link}>{item}</a>
+          ))}
+        </div>
+        
+        {/* menu hamburguesa */}
+        <button className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)} aria-label="Menú">
+          <span className={styles.hamburgerLine} style={{ transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+          <span className={styles.hamburgerLine} style={{ opacity: menuOpen ? 0 : 1 }} />
+          <span className={styles.hamburgerLine} style={{ transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
+        </button>
+
+      </div>
+
+      {/* --- links movil TEMPORAL !!!!! */}
+      <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}>
+        <div className={styles.mobileMenuInner}>
+          {['Inicio', 'Eventos', 'Rankings', 'Instituciones', 'Noticias', 'Quiénes Somos'].map((item) => (
+            <a key={item} href="#" className={styles.mobileLink}>{item}</a>
+          ))}
+        </div>
+      </div>
+    </nav>
+  )
+}

@@ -1,0 +1,90 @@
+/* --- Fuentes globales */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap');
+
+/* --- Variables CSS */
+:root {
+  --bg-light: #fff;
+  --color-navy: #080B14;
+  --color-dark: #0A0D1A;
+  --color-cyan: #00C8FF;
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-dark: #111111;
+
+  --color-border: rgba(255, 255, 255, 0.07);
+
+  /* Typography */
+  --font-heading: 'Barlow Semi Condensed', sans-serif;
+  --font-primary: 'Barlow', sans-serif;
+  --font-condensed: 'Barlow Condensed', sans-serif;
+  --font-heading-weight: 800;
+  --font-subheading-weight: 800;
+  --font-text-weight: 400;
+
+  /* Font Sizes */
+  --text-xs: 0.7rem;
+  --text-sm: 0.8125rem; /* 13px */
+  --text-base: 0.875rem; /* 14px */
+  --text-md: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+
+  --heading-md: clamp(2rem, 4vw, 3rem);
+  --heading-sm: clamp(1.5rem, 4vw, 2.1rem);
+
+  /* Bordes especificos reutilizables */
+  --radius-sm: 8px;
+  --radius-full: 9999px; /* full curvo, pildoras */
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--color-dark);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+  /* --------------------------------------------------- */
+  padding: 0;
+}

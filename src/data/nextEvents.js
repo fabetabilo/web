@@ -1,4 +1,4 @@
-export const latestEvents = [
+export const nextEvents = [
   {
     id: 1,
     title: 'Campeonato Sudamericano',

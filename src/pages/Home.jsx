@@ -2,8 +2,7 @@ import Carousel from '../components/ui/Carousel/Carousel'
 import EventsCarousel from '../components/ui/Carousel/EventsCarousel'
 import BoldBanner from '../components/ui/Banner/BoldBanner'
 import InstCarousel from '../components/ui/Carousel/InstCarousel'
-import ButtonLight from '../components/ui/Button/ButtonLight'
-import { ArrowRight } from '../components/ui/icons'
+import Button from '../components/ui/Button/Button'
 import { nextEvents } from '../data/nextEvents'
 import { heroSlides } from '../data/heroSlides'
 import { institutions } from '../data/institutions'
@@ -28,9 +27,9 @@ export default function Home() {
               <div className={styles.bar} />
               <h2 className={styles.title}>Top Historias</h2>
             </div>
-            <ButtonLight href="#" className={styles.seeAll}>
-              Ver Todo <ArrowRight style={{ width: '1rem', height: '1rem' }} />
-            </ButtonLight>
+            <Button variant="light" showArrow={true} href="#" className={styles.seeAll}>
+              Ver Todo
+            </Button>
           </div>
 
           {/* Grid */}

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ArrowRight, ChevronLeft, ChevronRight } from '../icons'
+import Button from '../Button/Button'
 import styles from './EventsCarousel.module.css'
 
 export default function EventsCarousel({ events = [] }) {
@@ -24,7 +25,7 @@ export default function EventsCarousel({ events = [] }) {
             <h2 className={styles.title}>SIGUIENTES EVENTOS</h2>
           </div>
           <div className={styles.headerRight}>
-            <button className={styles.allEventsBtn}>TODOS LOS EVENTOS</button>
+            <Button variant="dark">TODOS LOS EVENTOS</Button>
             <div className={styles.navButtons}>
               <button className={styles.navBtn} onClick={handlePrev} aria-label="Evento anterior">
                 <ChevronLeft className={styles.navIcon} />

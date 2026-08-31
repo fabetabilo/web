@@ -1,7 +1,6 @@
-.buttonLight {
+/* estilos base compartidos para los botones UI */
+.base {
   background: transparent;
-  border: 1px solid var(--color-navy);
-  color: var(--color-navy);
   border-radius: var(--radius-full);
   padding: 0.875rem 2rem;
   font-size: var(--text-md);
@@ -17,9 +16,32 @@
   text-decoration: none;
 }
 
-.buttonLight:hover,
-.buttonLight:active {
-  background: var(--color-navy, #000);
+.arrow {
+  flex-shrink: 0;
+}
+
+/* variante LIGHT para fondos claros */
+.light {
+  border: 1px solid #080B14;
+  color: #080B14;
+}
+
+.light:hover,
+.light:active {
+  background: #080B14;
   color: #fff;
-  border-color: var(--color-navy, #000);
+  border-color: #080B14;
+}
+
+/* variante DARK para fondos oscuros */
+.dark {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.dark:hover,
+.dark:active {
+  background: #fff;
+  color: #080B14;
+  border-color: #fff;
 }

@@ -1,0 +1,25 @@
+.buttonLight {
+  background: transparent;
+  border: 1px solid var(--color-navy);
+  color: var(--color-navy);
+  border-radius: var(--radius-full);
+  padding: 0.875rem 2rem;
+  font-size: var(--text-md);
+  font-family: var(--font-primary);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.buttonLight:hover,
+.buttonLight:active {
+  background: var(--color-navy, #000);
+  color: #fff;
+  border-color: var(--color-navy, #000);
+}

@@ -36,6 +36,9 @@
   /* Bordes especificos reutilizables */
   --radius-sm: 8px;
   --radius-full: 9999px; /* full curvo, pildoras */
+
+  /* Espaciados */
+  --spacing-md: 2.5rem;
 }
 
 /* reset */

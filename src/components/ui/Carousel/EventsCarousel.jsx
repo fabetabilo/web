@@ -1,20 +1,19 @@
 import { useState } from 'react'
 import { ArrowRight, ChevronLeft, ChevronRight } from '../icons'
+import Button from '../Button/Button'
 import styles from './EventsCarousel.module.css'
-import { latestEvents } from '../../../data/latestEvents'
 
-export default function EventsCarousel() {
+export default function EventsCarousel({ events = [] }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handleNext = () => {
-    // Only advance if there are more cards to the right
-    // We stop before the end depending on how many we want to show, 
-    // but a circular one might be better. Let's make it circular for now.
-    setCurrentIndex((prev) => (prev + 1) % latestEvents.length)
+    if (events.length === 0) return;
+    setCurrentIndex((prev) => (prev + 1) % events.length)
   }
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + latestEvents.length) % latestEvents.length)
+    if (events.length === 0) return;
+    setCurrentIndex((prev) => (prev - 1 + events.length) % events.length)
   }
 
   return (
@@ -26,7 +25,7 @@ export default function EventsCarousel() {
             <h2 className={styles.title}>SIGUIENTES EVENTOS</h2>
           </div>
           <div className={styles.headerRight}>
-            <button className={styles.allEventsBtn}>TODOS LOS EVENTOS</button>
+            <Button variant="dark">TODOS LOS EVENTOS</Button>
             <div className={styles.navButtons}>
               <button className={styles.navBtn} onClick={handlePrev} aria-label="Evento anterior">
                 <ChevronLeft className={styles.navIcon} />
@@ -45,7 +44,7 @@ export default function EventsCarousel() {
               transform: `translateX(calc(-${currentIndex} * (var(--card-width) + var(--gap))))`
             }}
           >
-            {latestEvents.map((event, index) => {
+            {events.map((event, index) => {
               const isPrincipal = index === currentIndex
               return (
                 <div

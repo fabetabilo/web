@@ -12,6 +12,7 @@
   --text-secondary: rgba(255, 255, 255, 0.7);
   --text-muted: rgba(255, 255, 255, 0.65);
   --text-dark: #111111;
+  --text-dark-muted: #555555;
 
   --color-border: rgba(255, 255, 255, 0.07);
 
@@ -35,7 +36,11 @@
 
   /* Bordes especificos reutilizables */
   --radius-sm: 8px;
+  --radius-md: 10px;
   --radius-full: 9999px; /* full curvo, pildoras */
+
+  /* Espaciados */
+  --spacing-md: 2.5rem;
 }
 
 /* reset */

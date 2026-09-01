@@ -1,9 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
-import { heroSlides } from '../../../data/heroSlides'
 import { ArrowRight, ChevronLeft, ChevronRight } from '../icons'
 import styles from './Carousel.module.css'
 
-export default function Carousel() {
+export default function Carousel({ slides = [] }) {
   const [current, setCurrent] = useState(0)
   const [transitioning, setTransitioning] = useState(false)
 
@@ -18,13 +17,16 @@ export default function Carousel() {
   )
 
   useEffect(() => {
-    const id = setInterval(() => goTo((current + 1) % heroSlides.length), 5500)
+    if (slides.length === 0) return;
+    const id = setInterval(() => goTo((current + 1) % slides.length), 5500)
     return () => clearInterval(id)
-  }, [current, goTo])
+  }, [current, goTo, slides.length])
+
+  if (slides.length === 0) return null;
 
   return (
     <div className={styles.hero}>
-      {heroSlides.map((slide, i) => (
+      {slides.map((slide, i) => (
         <div
           key={slide.id}
           className={`${styles.slide} ${i === current ? styles.active : ''}`}
@@ -52,7 +54,7 @@ export default function Carousel() {
       {/* flecha prev */}
       <button
         className={`${styles.arrow} ${styles.arrowPrev}`}
-        onClick={() => goTo((current - 1 + heroSlides.length) % heroSlides.length)}
+        onClick={() => goTo((current - 1 + slides.length) % slides.length)}
         aria-label="Anterior"
       >
         <ChevronLeft style={{ width: '1rem', height: '1rem' }} />
@@ -61,7 +63,7 @@ export default function Carousel() {
       {/* flecha next */}
       <button
         className={`${styles.arrow} ${styles.arrowNext}`}
-        onClick={() => goTo((current + 1) % heroSlides.length)}
+        onClick={() => goTo((current + 1) % slides.length)}
         aria-label="Siguiente"
       >
         <ChevronRight style={{ width: '1rem', height: '1rem' }} />
@@ -69,7 +71,7 @@ export default function Carousel() {
 
       {/* dots (indicador de slides) */}
       <div className={styles.dots}>
-        {heroSlides.map((_, i) => (
+        {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => goTo(i)}
@@ -81,7 +83,7 @@ export default function Carousel() {
 
       {/* contador-numero de slides */}
       <div className={styles.counter}>
-        {String(current + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
+        {String(current + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
       </div>
     </div>
   )
